@@ -11,7 +11,7 @@ driver = webdriver.Chrome(service=service_obj)
 
 driver.get("https://rahulshettyacademy.com/angularpractice/")
 
-# ID, XPath, CSS Selector, Classname, Name, Link Text
+# Locating elements from : ID, XPath, CSS Selector, Classname, Name, Link Text
 driver.find_element(By.NAME, "email").send_keys("hello@gmail.com")
 driver.find_element(By.ID, "exampleInputPassword1").send_keys("123456")
 driver.find_element(By.ID, "exampleCheck1").click()
