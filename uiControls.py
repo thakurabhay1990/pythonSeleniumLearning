@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 
 # -- This is for Chrome Browser --
@@ -21,10 +23,16 @@ driver.get("https://rahulshettyacademy.com/AutomationPractice/")
 checkboxes = driver.find_elements(By.XPATH, '//input[@type="checkbox"]')
 print(len(checkboxes)) # O/P : 3
 
+# Checkboxes
 for checkbox in checkboxes:
     if checkbox.get_attribute("value") == "option2":
         checkbox.click()
         assert checkbox.is_selected() # This assertion will return boolean value(True/ False)
         break
+
+# Radio buttons
+radiobuttons = driver.find_elements(By.CSS_SELECTOR, ".radioButton")
+radiobuttons[2].click()
+assert radiobuttons[2].is_selected()
 
 driver.close()
