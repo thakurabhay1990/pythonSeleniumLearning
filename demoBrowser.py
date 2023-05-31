@@ -8,7 +8,7 @@ from selenium import webdriver
 # -- This is for Chrome Browser --
 from selenium.webdriver.chrome.service import Service
 service_obj = Service("/Users/abhaythakur/Downloads/drivers/chromedriver")
-driver = webdriver.Chrome(service=service_obj)
+driver = webdriver.Chrome(service=service_obj) # The driver objects here holds the Chrome browser
 
 # -- This is for Firefox Browser --
 # from selenium.webdriver.firefox.service import Service
