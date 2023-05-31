@@ -6,6 +6,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
+from selenium.webdriver.support.select import Select
+
 service_obj = Service("/Users/abhaythakur/Downloads/drivers/chromedriver")
 driver = webdriver.Chrome(service=service_obj)
 
@@ -22,6 +24,10 @@ driver.find_element(By.ID, "exampleCheck1").click()
 driver.find_element(By.CSS_SELECTOR, "input[name='name']").send_keys("Kreatos Test")
 driver.find_element(By.CSS_SELECTOR, "#inlineRadio1").click()
 
+# Static Dropdown
+dropdown = Select(driver.find_element(By.ID, "exampleFormControlSelect1"))
+dropdown.select_by_visible_text("Female")
+dropdown.select_by_index(0)
 
 # Custom Xpath : //input[@type="submit"] for Submit CTA
 driver.find_element(By.XPATH, "//input[@type='submit']").click()
