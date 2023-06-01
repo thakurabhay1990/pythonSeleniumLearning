@@ -30,6 +30,21 @@ driver.find_element(By.CSS_SELECTOR, "img[alt='Cart']").click()
 # Now click on "PROCEED TO CHECKOUT" CTA from Add Cart popup
 driver.find_element(By.XPATH, "//button[text()='PROCEED TO CHECKOUT']").click()
 
+# Sum validation
+prices = driver.find_elements(By.CSS_SELECTOR, "tr td:nth-child(5) p")
+sum = 0
+for price in prices:
+    sum = sum + int(price.text) # Iteration 1: 0 + 160 >> Iteration 2 : 160 + 180 >> Iteration 3 : 340 + 48
+# Above, we have added int to price.text as the text will be coming in String format
+# and to get it in int we have to use int
+
+print(sum)
+
+totalamount = int(driver.find_element(By.CSS_SELECTOR, ".totAmt").text)
+
+assert sum == totalamount
+print("The sum and the total amount are matching.")
+
 # User navigates to Cart summary screen. Enter invalid coupon code
 driver.find_element(By.CSS_SELECTOR, ".promoCode").send_keys("rahulacademy")
 
