@@ -18,6 +18,7 @@ driver.get("https://rahulshettyacademy.com/seleniumPractise/#/")
 
 driver.find_element(By.CSS_SELECTOR, ".search-keyword").send_keys("ber")
 time.sleep(2) # here is an exception case where sleep was needed hence added
+
 # Here we are adding the logic to add n number of items that came post search result into the cart
 results = driver.find_elements(By.XPATH, "//div[@class='products']/div")
 count = len(results)
