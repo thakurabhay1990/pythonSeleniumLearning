@@ -1,15 +1,15 @@
-import time
 
 from selenium import webdriver
 
 from selenium.webdriver import ActionChains
+
 # -- This is for Chrome Browser --
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
 service_obj = Service("/Users/abhaythakur/Downloads/drivers/chromedriver")
 driver = webdriver.Chrome(service=service_obj)
-driver.implicitly_wait(6)
+driver.implicitly_wait(5)
 driver.maximize_window()
 
 driver.get("https://rahulshettyacademy.com/AutomationPractice/")

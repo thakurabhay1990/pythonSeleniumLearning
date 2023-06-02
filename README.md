@@ -5,3 +5,5 @@ Following are list of Practice sites used for Learning Selenium with Python:
 2) https://rahulshettyacademy.com/AutomationPractice/
 3) https://rahulshettyacademy.com/seleniumPractise/#/
 4) https://rahulshettyacademy.com/dropdownsPractise/
+5) https://the-internet.herokuapp.com/windows
+6) https://rahulshettyacademy.com/loginpagePractise/
