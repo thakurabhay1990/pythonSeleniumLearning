@@ -1,14 +1,10 @@
-import time
-
 from selenium import webdriver
-
-from selenium.webdriver import ActionChains
 
 # -- This is for Chrome Browser --
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
-browserSortedVeggie=[]
+browserSortedVeggie = []
 
 service_obj = Service("/Users/abhaythakur/Downloads/drivers/chromedriver")
 driver = webdriver.Chrome(service=service_obj)
@@ -25,7 +21,7 @@ veggieWebElements = driver.find_elements(By.XPATH, "//tr/td[1]")
 for ele in veggieWebElements:
     browserSortedVeggie.append(ele.text)
 
-originalBrowserSortedList = browserSortedVeggie.copy() # we can also use .slice() method too
+originalBrowserSortedList = browserSortedVeggie.copy()  # we can also use .slice() method
 
 # Sort the list, get the new sorted list and both the lists should be equal check it by adding assertion
 browserSortedVeggie.sort()
