@@ -12,13 +12,28 @@
 # -k stands for methods names execution
 # -s stands for logs in output
 # -v stands for more infor metadata
+# To run smoke test cases the command we use is : py.test -m smoke -v -s
+
+# Important : For Generating Reports using this command in terminal: "py.test --html=report.html -s". "report.html"
+# will appear in the pytestDemo folder
+
 
 import pytest
 
 
+@pytest.mark.smoke  # Marked the below test case as smoke test
+@pytest.mark.skip  # If we want to skip a particular test case
 def test_firstProgram():
     print("Hi! There")
 
 
+@pytest.mark.xfail  # when we use this to run then the test case will run but there will be no output in reporting
+# whether it passed or failed
 def test_secondProgram():
     print("This is a Abhay Thakur.")
+
+
+def test_crossBrowser(crossBrowser):
+    print(crossBrowser)
+
+
