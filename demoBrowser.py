@@ -7,6 +7,12 @@ from selenium import webdriver
 
 # -- This is for Chrome Browser --
 from selenium.webdriver.chrome.service import Service
+# Approach 1 (let the driver download from web automatically.) -- Getting error
+# service_obj = Service()
+# driver = webdriver.Chrome(service=service_obj) # The driver objects here holds the Chrome browser
+
+
+# Approach 2 (using local Chrome Driver):
 service_obj = Service("/Users/abhaythakur/Downloads/drivers/chromedriver")
 driver = webdriver.Chrome(service=service_obj) # The driver objects here holds the Chrome browser
 
