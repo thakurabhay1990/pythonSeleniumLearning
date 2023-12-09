@@ -52,7 +52,9 @@ driver.find_element(By.CSS_SELECTOR, ".promoCode").send_keys("rahulacademy")
 driver.find_element(By.CSS_SELECTOR, ".promoBtn").click()
 
 # Explicit Wait Implementation
-wait = WebDriverWait(driver, 10)
+# wait = WebDriverWait(driver, 10) #basic one
+# To ignore all exception we add 1 more argument below in explicit wait
+wait = WebDriverWait(driver, 10, ignored_exceptions=[Exception])
 wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, ".promoInfo")))
 
 # wait until code invalidates and then validate the "Invalid code" message
